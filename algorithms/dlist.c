@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <string.h>
-#include "list.h"
 #include "dlist.h"
 
 void dlist_init(DList *list, void (*destroy)(void *data)) {
@@ -13,8 +12,8 @@ void dlist_init(DList *list, void (*destroy)(void *data)) {
 
 void dlist_destroy(DList *list) {
   void *data;
-  while (list_size(list) > 0) {
-    if (dlist_remove(list, list_tail(list), (void **)&data) == 0 && list->destroy != NULL) {
+  while (dlist_size(list) > 0) {
+    if (dlist_remove(list, dlist_tail(list), (void **)&data) == 0 && list->destroy != NULL) {
       list->destroy(data);
     }
   }
@@ -22,16 +21,16 @@ void dlist_destroy(DList *list) {
   return;
 }
 
-int dlist_ins_next(DList *list, DListElmt element, const void *data) {
+int dlist_ins_next(DList *list, DListElmt *element, const void *data) {
   DListElmt *new_element;
-  if (element == NULL && list_size(list) != 0) {
+  if (element == NULL && dlist_size(list) != 0) {
     return -1;
   }
   if ((new_element = (DListElmt *)malloc(sizeof(DListElmt))) == NULL) {
     return -1;
   }
   new_element->data = (void *)data;
-  if (list_size(list) == 0) {
+  if (dlist_size(list) == 0) {
     list->head = new_element;
     list->head->prev = NULL;
     list->head->next = NULL;
@@ -50,16 +49,16 @@ int dlist_ins_next(DList *list, DListElmt element, const void *data) {
   return 0;
 }
 
-int dlist_ins_prev(DList *list, DListElmt element, const void *data) {
+int dlist_ins_prev(DList *list, DListElmt *element, const void *data) {
   DListElmt *new_element;
-  if (element == NULL && list_size(list) != 0) {
+  if (element == NULL && dlist_size(list) != 0) {
     return -1;
   }
   if ((new_element = (DListElmt *)malloc(sizeof(DListElmt))) == NULL) {
     return -1;
   }
   new_element->data = (void *)data;
-  if (list_size(list) == 0) {
+  if (dlist_size(list) == 0) {
     list->head = new_element;
     list->head->prev = NULL;
     list->head->next = NULL;
@@ -78,15 +77,15 @@ int dlist_ins_prev(DList *list, DListElmt element, const void *data) {
   return 0;
 }
 
-int dlist_remove(DList *list, DListElmt element, void **data) {
-  if (element == NULL || list_size(list) != 0) {
+int dlist_remove(DList *list, DListElmt *element, void **data) {
+  if (element == NULL || dlist_size(list) != 0) {
     return -1;
   }
   *data = element->data;
   if (element == list->head) {
     list->head = element->next;
     if (list->head == NULL) {
-      list->tail == NULL;
+      list->tail = NULL;
     } else {
       element->next->prev = NULL;
     }

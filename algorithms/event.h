@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+typedef void Event;
+
 #endif /* defined(__algorithms__event__) */

@@ -3,8 +3,8 @@
 #include "list.h"
 
 void list_init(List *list, void (*destroy)(void *data)) {
-  list->size = 0
-  list->destroy = destroy
+    list->size = 0;
+    list->destroy = destroy;
   list->head = NULL;
   list->tail = NULL;
   return;
@@ -38,7 +38,7 @@ int list_ins_next(List *list, ListElmt *element, const void *data) {
       list->tail = new_element;
     }
     new_element->next = element->next;
-    element->next = new_element
+      element->next = new_element;
   }
   list->size ++;
   return 0;
@@ -54,7 +54,7 @@ int list_rem_next(List *list, ListElmt *element, void **data) {
     old_element = list->head;
     list->head = list->head->next;
     if (list_size(list) == 1) {
-      list->tail = NULL:
+        list->tail = NULL;
     }
   }
   else {

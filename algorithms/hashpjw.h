@@ -11,4 +11,8 @@
 
 #include <stdio.h>
 
+unsigned int hashpjw(const void *key, int len);
+
+#define PRIME_TBLSIZ 4
+
 #endif /* defined(__algorithms__hashpjw__) */

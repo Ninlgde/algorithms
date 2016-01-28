@@ -12,7 +12,7 @@ void clist_init(CList *list, void (*destroy)(void *data)) {
 
 void clist_destroy(CList *list) {
   void *data;
-  while (list_size(list) > 0) {
+  while (clist_size(list) > 0) {
     if (clist_rem_next(list, list->head, (void **)&data) == 0 && list->destroy != NULL) {
       list->destroy(data);
     }
@@ -27,7 +27,7 @@ int clist_ins_next(CList *list, CListElmt *element, const void *data) {
     return -1;
   }
   new_element->data = (void *)data;
-  if (list_size(list) == 0) {
+  if (clist_size(list) == 0) {
     new_element->next = new_element;
     list->head = new_element;
   } else {
@@ -40,7 +40,7 @@ int clist_ins_next(CList *list, CListElmt *element, const void *data) {
 
 int clist_rem_next(CList *list, CListElmt *element, void **data) {
   CListElmt *old_element;
-  if (list_size(list) == 0) {
+  if (clist_size(list) == 0) {
     return -1;
   }
   *data = element->next->data;
@@ -50,7 +50,7 @@ int clist_rem_next(CList *list, CListElmt *element, void **data) {
   } else {
     old_element = element->next;
     element->next = element->next->next;
-    if (old_element == list_head(list)) {
+    if (old_element == clist_head(list)) {
       list->head = old_element->next;
     }
   }

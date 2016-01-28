@@ -9,6 +9,15 @@
 #ifndef __algorithms__lex__
 #define __algorithms__lex__
 
-#include <stdio.h>
+#include "chtbl.h"
+
+typedef enum Token_ {
+    lexit,
+    error,
+    digit,
+    other
+}Token;
+
+Token lex(const char *istream, CHTbl *symtbl);
 
 #endif /* defined(__algorithms__lex__) */

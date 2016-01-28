@@ -23,17 +23,16 @@ typedef struct DList_
 /*      public interface      */
 void dlist_init(DList *list, void (*destroy)(void *data));
 void dlist_destroy(DList *list);
-int dlist_ins_next(DList *list, DListElmt element, const void *data);
-int dlist_ins_prev(DList *list, DListElmt element, const void *data);
-int dlist_remove(DList *list, DListElmt element, void **data);
+int dlist_ins_next(DList *list, DListElmt *element, const void *data);
+int dlist_ins_prev(DList *list, DListElmt *element, const void *data);
+int dlist_remove(DList *list, DListElmt *element, void **data);
 
-/* use list.h
-#define dlist_size(list) ((list)->size) list_size
-#define dlist_head(list) ((list)->head) list_head
-#define dlist_tail(list) ((list)->tail) list_tail
-#define dlist_data(element) ((element)->data) list_data
-#define dlist_next(element) ((element)->next) list_next
-*/
+
+#define dlist_size(list) ((list)->size)
+#define dlist_head(list) ((list)->head)
+#define dlist_tail(list) ((list)->tail)
+#define dlist_data(element) ((element)->data)
+#define dlist_next(element) ((element)->next)
 #define dlist_is_head(element) ((element)->prev == NULL ? 1 : 0)
 #define dlist_is_tail(element) ((element)->next == NULL ? 1 : 0)
 #define dlist_prev(element) ((element)->prev)
