@@ -25,6 +25,7 @@
 		DA8876BF1B88794F0090C9B6 /* lex.c in Sources */ = {isa = PBXBuildFile; fileRef = DA8876BD1B88794F0090C9B6 /* lex.c */; };
 		DA90A3981B959BCD0098E861 /* ohtbl.c in Sources */ = {isa = PBXBuildFile; fileRef = DA90A3961B959BCD0098E861 /* ohtbl.c */; };
 		DA94B7AF1B9BEBB2009A2BEF /* bitree.c in Sources */ = {isa = PBXBuildFile; fileRef = DA94B7AD1B9BEBB2009A2BEF /* bitree.c */; };
+		DACF9B3C1C5FD8CD0011BDDB /* heap.c in Sources */ = {isa = PBXBuildFile; fileRef = DACF9B3A1C5FD8CD0011BDDB /* heap.c */; };
 		DAF9CC441C3D6F3D00B58D3D /* bistree.c in Sources */ = {isa = PBXBuildFile; fileRef = DAF9CC421C3D6F3D00B58D3D /* bistree.c */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,8 @@
 		DA90A3971B959BCD0098E861 /* ohtbl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ohtbl.h; sourceTree = "<group>"; };
 		DA94B7AD1B9BEBB2009A2BEF /* bitree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitree.c; sourceTree = "<group>"; };
 		DA94B7AE1B9BEBB2009A2BEF /* bitree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitree.h; sourceTree = "<group>"; };
+		DACF9B3A1C5FD8CD0011BDDB /* heap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = heap.c; sourceTree = "<group>"; };
+		DACF9B3B1C5FD8CD0011BDDB /* heap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = heap.h; sourceTree = "<group>"; };
 		DAF9CC421C3D6F3D00B58D3D /* bistree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bistree.c; sourceTree = "<group>"; };
 		DAF9CC431C3D6F3D00B58D3D /* bistree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bistree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +151,8 @@
 				DA4B8C091B83987A006C4044 /* stack.h */,
 				DA4B8C011B83378B006C4044 /* utils.c */,
 				DA4B8C021B83378B006C4044 /* utils.h */,
+				DACF9B3A1C5FD8CD0011BDDB /* heap.c */,
+				DACF9B3B1C5FD8CD0011BDDB /* heap.h */,
 			);
 			path = algorithms;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				DA4B8C081B83378B006C4044 /* utils.c in Sources */,
 				DA4B8C041B83378B006C4044 /* dlist.c in Sources */,
 				DA8876BC1B886F310090C9B6 /* chtbl.c in Sources */,
+				DACF9B3C1C5FD8CD0011BDDB /* heap.c in Sources */,
 				DA20EF2F1B83374900EE6182 /* main.c in Sources */,
 				DA4B8C071B83378B006C4044 /* sort.c in Sources */,
 				DA4B8C031B83378B006C4044 /* clist.c in Sources */,
